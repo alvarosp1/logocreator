@@ -1,0 +1,12 @@
+{
+  "name": "my-fastapi-app",
+  "version": "1.0.0",
+  "description": "A FastAPI application",
+  "main": "main.py",
+  "scripts": {
+    "start": "uvicorn app:app --reload"
+  },
+  "devDependencies": {
+    "netlify-plugin-python-functions": "^0.1.0"
+  }
+}
