@@ -3,9 +3,7 @@ from pydantic import BaseModel
 import requests
 import io
 from PIL import Image
-import matplotlib.pyplot as plt
 from starlette.responses import StreamingResponse
-from datetime import datetime
 
 app = FastAPI()
 
@@ -22,11 +20,11 @@ async def create_query(item: Item):
 
     image = Image.open(io.BytesIO(image_bytes))
     
-    # Genera un nombre de archivo único utilizando la hora actual
-    filename = "output_" + datetime.now().strftime("%Y%m%d_%H%M%S") + ".png"
-    image.save(filename)  # Guarda la imagen en el servidor local
+    # Convierte la imagen en un objeto de archivo en memoria
+    file_like = io.BytesIO()
+    image.save(file_like, format='PNG')
+    file_like.seek(0)
 
-    file_like = open(filename, mode="rb")
     return StreamingResponse(file_like, media_type="image/png")
 
 if __name__ == "__main__":
