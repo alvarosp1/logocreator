@@ -5,8 +5,5 @@
   "main": "main.py",
   "scripts": {
     "start": "uvicorn app:app --reload"
-  },
-  "devDependencies": {
-    "netlify-plugin-python-functions": "^0.1.0"
   }
 }
