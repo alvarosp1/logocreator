@@ -1,9 +1,4 @@
-fastapi 
-uvicorn 
-kaleido 
-python-multipart 
-typing-extensions 
-requests 
-urllib3==1.26.5 
-pillow 
-matplotlib
+fastapi
+uvicorn
+requests
+Pillow
