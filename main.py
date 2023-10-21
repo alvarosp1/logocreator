@@ -26,6 +26,3 @@ async def create_query(item: Item):
     file_like.seek(0)
 
     return StreamingResponse(file_like, media_type="image/png")
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
