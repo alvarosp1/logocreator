@@ -25,7 +25,7 @@ headers = {"Authorization": os.getenv("API_IMAGE") }
 class Item(BaseModel):
     inputs: str
 
-@app.post("/query/", response_class=Response)
+@app.post("/query/", response_model=Dict[str, Any])
 async def create_query(item: Item):
     response = requests.post(API_URL, headers=headers, json=item.dict())
     image_bytes = response.content
