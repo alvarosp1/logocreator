@@ -1,7 +1,0 @@
-[build]
-  command = "uvicorn app:app --reload"
-  targetPort = 8000
-  publish = "static/"
-
-[[plugins]]
-  package = "netlify-plugin-python-functions"
